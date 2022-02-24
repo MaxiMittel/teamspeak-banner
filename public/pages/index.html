@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noethenesports</title>
+</head>
+<body>
+    <img src="/images/logo.svg" alt="logo" class="logo">
+    <p id="time">00:00</p>
+
+    <style>
+        html, body{
+            background-color: #16171d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            font-family: sans-serif;
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+
+        .logo{
+            height: 100px;
+        }
+
+        #time{
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 40px;
+            margin: 0;
+        }
+    </style>
+    <script>
+        var time = document.getElementById("time");
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        // Add leading zero to numbers less than 10
+        function addZero(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        var timeString = addZero(hours) + ":" + addZero(minutes);
+        time.innerHTML = timeString;
+    </script>
+</body>
+</html>
