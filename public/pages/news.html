@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="logoContainer">
-      <img src="/images/logo_small.png" alt="logo" class="logo" />
+      <img src="/images/logo_small.png" alt="logo" class="logo" id="logo_img"/>
       <strong>Noethenschau</strong>
       <div class="divider"></div>
       <p id="time">00:00</p>
@@ -154,6 +154,13 @@
             .getElementById("news_container")
             .insertAdjacentHTML("beforeend", html);
         });
+
+      var logo = document.getElementById("logo_img");
+
+      // If current date is in june
+      if (date.getMonth() == 5) {
+        logo.src = "/images/logo_pride.png";
+      }
     </script>
   </body>
 </html>

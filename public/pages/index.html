@@ -7,7 +7,7 @@
     <title>Noethenesports</title>
 </head>
 <body>
-    <img src="/images/logo.svg" alt="logo" class="logo">
+    <img src="/images/logo.svg" alt="logo" class="logo" id="logo_img">
     <p id="time">00:00</p>
 
     <style>
@@ -55,6 +55,13 @@
 
         var timeString = addZero(hours) + ":" + addZero(minutes);
         time.innerHTML = timeString;
+
+        var logo = document.getElementById("logo_img");
+
+        // If current date is in june
+        if(date.getMonth() == 5){
+            logo.src = "/images/logo_pride.png";
+        }
     </script>
 </body>
 </html>
